@@ -44,6 +44,11 @@ let make ::name _ => {
         <Button raised=true onClick=(update addItem)>
           (ReasonReact.stringToElement "Click me to add Item")
         </Button>
+        <Avatar
+        alt="a kitten"
+        component="div"
+        src="./kitten.jpg"
+        />
       </div>
     </div>
 };
