@@ -1,4 +1,5 @@
 type state = {
+  checked: bool,
   expanded: bool,
   items: list int
 };
@@ -6,11 +7,14 @@ type state = {
 let addItem _e {ReasonReact.state: state} =>
   ReasonReact.Update {...state, items: [List.hd state.items + 1, ...state.items]};
 
+let checkBox checked {ReasonReact.state: state} =>
+  ReasonReact.Update {...state, checked };
+
 let component = ReasonReact.statefulComponent "Greeting";
 
 let make ::name _ => {
   ...component,
-  initialState: fun () => {expanded: false, items: [1]},
+  initialState: fun () => {checked: false, expanded: false, items: [1]},
   render: fun {state, update} =>
     <div>
       <AppBar>
@@ -49,6 +53,27 @@ let make ::name _ => {
         component="div"
         src="./kitten.jpg"
         />
+        (ReasonReact.stringToElement "Fixed checkbox")
+        <Checkbox
+          checked=true/>
+        (ReasonReact.stringToElement "Dead checkbox")
+        <Checkbox
+          checked=false
+          disabled=true
+          disableRipple=true
+          disabledClassName=("dead")/>
+        (ReasonReact.stringToElement "Live checkbox")
+        <Checkbox
+          onChange=(update checkBox)
+          name=("mah checkbox")
+        />
+        (ReasonReact.stringToElement "Custom icons")
+          <Checkbox
+          checkedIcon=(
+            ReasonReact.stringToElement "CH-CH-CHECKED"
+          )
+          icon=(ReasonReact.stringToElement "CHECKIT")
+          />
       </div>
     </div>
 };
