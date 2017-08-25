@@ -1,11 +1,16 @@
 type state = {
   checked: bool,
   expanded: bool,
-  items: list int
+  items: list int,
+  openDialog: bool
 };
 
 let addItem _e {ReasonReact.state: state} =>
   ReasonReact.Update {...state, items: [List.hd state.items + 1, ...state.items]};
+
+let openDialog _ {ReasonReact.state: state} => ReasonReact.Update {...state, openDialog: true};
+
+let closeDialog _ {ReasonReact.state: state} => ReasonReact.Update {...state, openDialog: false};
 
 let checkBox checked {ReasonReact.state: state} => ReasonReact.Update {...state, checked};
 
@@ -13,7 +18,7 @@ let component = ReasonReact.statefulComponent "Greeting";
 
 let make ::name _ => {
   ...component,
-  initialState: fun () => {checked: false, expanded: false, items: [1]},
+  initialState: fun () => {checked: false, expanded: false, items: [1], openDialog: false},
   render: fun {state, update} =>
     <div>
       <AppBar>
@@ -44,6 +49,14 @@ let make ::name _ => {
             )
           )
         )
+        <Dialog openDialog=state.openDialog onRequestClose=(update closeDialog)>
+          <Typography textType="display1">
+            (ReasonReact.stringToElement "Thanks for opening this awesome dialog")
+          </Typography>
+        </Dialog>
+        <Button raised=true onClick=(update openDialog)>
+          (ReasonReact.stringToElement "Click me to open dialog")
+        </Button>
         <Button raised=true onClick=(update addItem)>
           (ReasonReact.stringToElement "Click me to add Item")
         </Button>
