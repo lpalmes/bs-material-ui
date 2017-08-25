@@ -16,11 +16,11 @@
 - [x] CardMedia
 - [x] Checkbox
 - [x] Chip
-- [ ] Dialog
-- [ ] DialogActions
-- [ ] DialogContent
-- [ ] DialogContentText
-- [ ] DialogTitle
+- [x] Dialog
+- [x] DialogActions
+- [x] DialogContent
+- [x] DialogContentText
+- [x] DialogTitle
 - [ ] Divider
 - [ ] Drawer
 - [ ] FormControl
