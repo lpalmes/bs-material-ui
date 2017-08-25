@@ -52,11 +52,13 @@ let make ::name _ => {
         <Dialog openDialog=state.openDialog onRequestClose=(update closeDialog)>
           <DialogTitle> (ReasonReact.stringToElement "Welcome to the dialog") </DialogTitle>
           <DialogContent>
-            <Typography>
+            <DialogContentText>
               (ReasonReact.stringToElement "Thanks for opening this awesome dialog")
-            </Typography>
+            </DialogContentText>
           </DialogContent>
-          <DialogActions> <Button> (ReasonReact.stringToElement "Close") </Button> </DialogActions>
+          <DialogActions>
+            <Button onClick=(update closeDialog)> (ReasonReact.stringToElement "Close") </Button>
+          </DialogActions>
         </Dialog>
         <Button raised=true onClick=(update openDialog)>
           (ReasonReact.stringToElement "Click me to open dialog")
