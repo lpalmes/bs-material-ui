@@ -10,7 +10,6 @@ type dialogClasses = {
 };
 
 let make
-    color::(color: option string)=?
     classes::(classes: option dialogClasses)=?
     enterTransitionDuration::(enterTransitionDuration: option int)=?
     leaveTransitionDuration::(leaveTransitionDuration: option int)=?
@@ -18,7 +17,6 @@ let make
     ignoreBackdropClick::(ignoreBackdropClick: option bool)=?
     ignoreEscapeKeyUp::(ignoreEscapeKeyUp: option bool)=?
     style::(style: option ReactDOMRe.style)=?
-    position::(position: option string)=?
     onBackdropClick::(onBackdropClick: option (unit => unit))=?
     onEnter::(onEnter: option (unit => unit))=?
     onEntered::(onEntered: option (unit => unit))=?
@@ -35,9 +33,7 @@ let make
     props::
       Js.Undefined.(
         {
-          "color": from_opt color,
           "style": from_opt style,
-          "position": from_opt position,
           "classes": from_opt classes,
           "fullScreen": from_opt fullScreen,
           "leaveTransitionDuration": from_opt leaveTransitionDuration,

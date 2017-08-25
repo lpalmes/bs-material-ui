@@ -50,9 +50,13 @@ let make ::name _ => {
           )
         )
         <Dialog openDialog=state.openDialog onRequestClose=(update closeDialog)>
-          <Typography textType="display1">
-            (ReasonReact.stringToElement "Thanks for opening this awesome dialog")
-          </Typography>
+          <DialogTitle> (ReasonReact.stringToElement "Welcome to the dialog") </DialogTitle>
+          <DialogContent>
+            <Typography>
+              (ReasonReact.stringToElement "Thanks for opening this awesome dialog")
+            </Typography>
+          </DialogContent>
+          <DialogActions> <Button> (ReasonReact.stringToElement "Close") </Button> </DialogActions>
         </Dialog>
         <Button raised=true onClick=(update openDialog)>
           (ReasonReact.stringToElement "Click me to open dialog")
