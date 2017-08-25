@@ -7,8 +7,7 @@ type state = {
 let addItem _e {ReasonReact.state: state} =>
   ReasonReact.Update {...state, items: [List.hd state.items + 1, ...state.items]};
 
-let checkBox checked {ReasonReact.state: state} =>
-  ReasonReact.Update {...state, checked };
+let checkBox checked {ReasonReact.state: state} => ReasonReact.Update {...state, checked};
 
 let component = ReasonReact.statefulComponent "Greeting";
 
@@ -48,32 +47,18 @@ let make ::name _ => {
         <Button raised=true onClick=(update addItem)>
           (ReasonReact.stringToElement "Click me to add Item")
         </Button>
-        <Avatar
-        alt="a kitten"
-        component="div"
-        src="./kitten.jpg"
-        />
+        <Avatar alt="a kitten" component="div" src="./kitten.jpg" />
         (ReasonReact.stringToElement "Fixed checkbox")
-        <Checkbox
-          checked=true/>
+        <Checkbox checked=true />
         (ReasonReact.stringToElement "Dead checkbox")
-        <Checkbox
-          checked=false
-          disabled=true
-          disableRipple=true
-          disabledClassName=("dead")/>
+        <Checkbox checked=false disabled=true disableRipple=true disabledClassName="dead" />
         (ReasonReact.stringToElement "Live checkbox")
-        <Checkbox
-          onChange=(update checkBox)
-          name=("mah checkbox")
-        />
+        <Checkbox onChange=(update checkBox) name="mah checkbox" />
         (ReasonReact.stringToElement "Custom icons")
-          <Checkbox
-          checkedIcon=(
-            ReasonReact.stringToElement "CH-CH-CHECKED"
-          )
+        <Checkbox
+          checkedIcon=(ReasonReact.stringToElement "CH-CH-CHECKED")
           icon=(ReasonReact.stringToElement "CHECKIT")
-          />
+        />
       </div>
     </div>
 };

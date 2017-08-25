@@ -4,4 +4,4 @@ node_modules
 npm-debug.log
 bundledOutputs/
 lib/
-src/.DS_Store
+.DS_Store
