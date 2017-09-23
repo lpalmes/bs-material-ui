@@ -5,6 +5,8 @@ type state = {
   openDialog: bool
 };
 
+Js.log (Theme.getColor Theme.teal 50);
+
 let addItem _e {ReasonReact.state: state} =>
   ReasonReact.Update {...state, items: [List.hd state.items + 1, ...state.items]};
 
