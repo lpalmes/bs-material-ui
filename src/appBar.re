@@ -1,4 +1,4 @@
-external appBar : ReasonReact.reactClass = "AppBar" [@@bs.module "material-ui"];
+external appBar : ReasonReact.reactClass = "" [@@bs.module "material-ui/AppBar"];
 
 let make
     color::(color: option string)=?

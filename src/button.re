@@ -1,4 +1,4 @@
-external button : ReasonReact.reactClass = "Button" [@@bs.module "material-ui"];
+external button : ReasonReact.reactClass = "" [@@bs.module "material-ui/Button"];
 
 let make
     ::raised=?
