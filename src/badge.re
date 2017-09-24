@@ -1,4 +1,4 @@
-external badge : ReasonReact.reactClass = "" [@@bs.module "material-ui/Badge"];
+external badge : ReasonReact.reactClass = "Badge" [@@bs.module "material-ui"];
 
 let make
     badgeContent::(badgeContent: array ReasonReact.reactElement)

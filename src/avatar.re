@@ -1,4 +1,4 @@
-external avatar : ReasonReact.reactClass = "" [@@bs.module "material-ui/Avatar"];
+external avatar : ReasonReact.reactClass = "Avatar" [@@bs.module "material-ui"];
 
 let make
     alt::(alt: option string)=?

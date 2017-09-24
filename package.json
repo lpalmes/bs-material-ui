@@ -9,7 +9,10 @@
   "bugs": {
     "url": "https://github.com/lpalmes/bs-material-ui/issues"
   },
-  "files": ["src/*.re", "bsconfig.json"],
+  "files": [
+    "src/*.re",
+    "bsconfig.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lpalmes/bs-material-ui.git"

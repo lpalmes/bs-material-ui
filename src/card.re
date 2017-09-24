@@ -1,4 +1,4 @@
-external card : ReasonReact.reactClass = "" [@@bs.module "material-ui/Card"];
+external card : ReasonReact.reactClass = "Card" [@@bs.module "material-ui"];
 
 let make ::raised=? style::(style: option ReactDOMRe.style)=? children =>
   ReasonReact.wrapJsForReason

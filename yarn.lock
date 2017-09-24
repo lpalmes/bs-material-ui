@@ -271,8 +271,8 @@ browserify-zlib@^0.1.4:
     pako "~0.2.0"
 
 bs-platform@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.9.0.tgz#b8454e6c4760f63907aff891400e855c6b5522b7"
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.9.2.tgz#19e1f3a0331ffbcf416c5c1b883fdf656aac18b8"
 
 buffer-xor@^1.0.2:
   version "1.0.3"
