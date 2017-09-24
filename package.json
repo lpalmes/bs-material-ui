@@ -1,9 +1,19 @@
 {
   "name": "bs-material-ui",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Reason-React bindings for Material Ui",
+  "author": {
+    "name": "Lorenzo Palmes"
+  },
+  "bugs": {
+    "url": "https://github.com/lpalmes/bs-material-ui/issues"
+  },
+  "files": ["src/*.re", "bsconfig.json"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpalmes/bs-material-ui.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "bsb -make-world -w",
@@ -11,10 +21,9 @@
     "clean": "bsb -clean-world"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
-    "material-ui": "1.0.0-beta.6",
+    "material-ui": "1.0.0-beta.11",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "reason-react": ">=0.2.1"

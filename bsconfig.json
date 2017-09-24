@@ -1,12 +1,15 @@
 {
   "name": "material-ui",
-  "reason": { "react-jsx": 2 },
+  "reason": {"react-jsx": 2},
   "namespace": true,
   "bs-dependencies": ["reason-react"],
   "bsc-flags": ["-bs-super-errors"],
   "sources": [
     {
       "dir": "src"
+    },
+    {
+      "dir": "test"
     }
   ]
 }
