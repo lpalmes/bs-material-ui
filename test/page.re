@@ -7,9 +7,6 @@ type state = {
 
 Js.log (Theme.getColor Theme.teal 50);
 
-let addItem _e {ReasonReact.state: state} =>
-  ReasonReact.Update {...state, items: [List.hd state.items + 1, ...state.items]};
-
 let openDialog _ {ReasonReact.state: state} => ReasonReact.Update {...state, openDialog: true};
 
 let closeDialog _ {ReasonReact.state: state} => ReasonReact.Update {...state, openDialog: false};
@@ -29,28 +26,10 @@ let make ::name _ => {
             (ReasonReact.stringToElement name)
           </Typography>
           <div style=(ReactDOMRe.Style.make flex::"1" ()) />
-          <Button onClick=(update addItem)> (ReasonReact.stringToElement "Add Item") </Button>
+          <Button> (ReasonReact.stringToElement "Add Item") </Button>
         </Toolbar>
       </AppBar>
       <div style=(ReactDOMRe.Style.make paddingTop::"64px" ())>
-        (
-          ReasonReact.arrayToElement (
-            Array.of_list (
-              List.map
-                (
-                  fun item =>
-                    <Paper
-                      key=(string_of_int item)
-                      style=(ReactDOMRe.Style.make padding::"8px" marginTop::"16px" ())>
-                      <Typography>
-                        (ReasonReact.stringToElement ("Element number " ^ string_of_int item))
-                      </Typography>
-                    </Paper>
-                )
-                state.items
-            )
-          )
-        )
         <Dialog openDialog=state.openDialog onRequestClose=(update closeDialog)>
           <DialogTitle> (ReasonReact.stringToElement "Welcome to the dialog") </DialogTitle>
           <DialogContent>
@@ -64,9 +43,6 @@ let make ::name _ => {
         </Dialog>
         <Button raised=true onClick=(update openDialog)>
           (ReasonReact.stringToElement "Click me to open dialog")
-        </Button>
-        <Button raised=true onClick=(update addItem)>
-          (ReasonReact.stringToElement "Click me to add Item")
         </Button>
         <Avatar alt="a kitten" component="div" src="./kitten.jpg" />
         (ReasonReact.stringToElement "Fixed checkbox")
