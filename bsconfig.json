@@ -1,16 +1,13 @@
 {
   "name": "bs-material-ui",
-  "reason": { "react-jsx": 2 },
+  "reason": {"react-jsx": 2},
   "namespace": true,
   "bs-dependencies": ["reason-react"],
   "bsc-flags": ["-bs-super-errors"],
-  "package-specs": [{ "module": "commonjs", "in-source": true }],
+  "package-specs": [{"module": "commonjs", "in-source": true}],
   "sources": [
     {
       "dir": "src"
-    },
-    {
-      "dir": "test"
     }
   ]
 }
