@@ -6,15 +6,14 @@ var MaterialUi         = require("material-ui");
 var Js_undefined       = require("bs-platform/lib/js/js_undefined.js");
 var Utils$BsMaterialUi = require("./utils.js");
 
-function make(raised, onClick, className, dense, disableFocusRipple, disableRipple, disabled, fab, children) {
-  return ReasonReact.wrapJsForReason(MaterialUi.Button, {
-              raised: Utils$BsMaterialUi.unwrapBool(raised),
-              dense: Utils$BsMaterialUi.unwrapBool(dense),
-              disableFocusRipple: Utils$BsMaterialUi.unwrapBool(disableFocusRipple),
+function make(onClick, component, className, centerRipple, disableRipple, focusRipple, disabled, children) {
+  return ReasonReact.wrapJsForReason(MaterialUi.ButtonBase, {
+              focusRipple: Utils$BsMaterialUi.unwrapBool(focusRipple),
+              centerRipple: Utils$BsMaterialUi.unwrapBool(centerRipple),
               disableRipple: Utils$BsMaterialUi.unwrapBool(disableRipple),
               disabled: Utils$BsMaterialUi.unwrapBool(disabled),
-              fab: Utils$BsMaterialUi.unwrapBool(fab),
               onClick: Js_undefined.from_opt(onClick),
+              component: Js_undefined.from_opt(component),
               className: Js_undefined.from_opt(className)
             }, children);
 }

@@ -1,25 +1,23 @@
-external button : ReasonReact.reactClass = "Button" [@@bs.module "material-ui"];
+external buttonBase : ReasonReact.reactClass = "ButtonBase" [@@bs.module "material-ui"];
 
 let make
-    ::raised=?
     onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
+    component::(component: option string)=?
     className::(className: option string)=?
-    ::dense=?
-    ::disableFocusRipple=?
+    ::centerRipple=?
     ::disableRipple=?
+    ::focusRipple=?
     ::disabled=?
-    ::fab=?
     children =>
   ReasonReact.wrapJsForReason
-    reactClass::button
+    reactClass::buttonBase
     props::{
-      "raised": raised |> Utils.unwrapBool,
-      "dense": dense |> Utils.unwrapBool,
-      "disableFocusRipple": disableFocusRipple |> Utils.unwrapBool,
+      "focusRipple": focusRipple |> Utils.unwrapBool,
+      "centerRipple": centerRipple |> Utils.unwrapBool,
       "disableRipple": disableRipple |> Utils.unwrapBool,
       "disabled": disabled |> Utils.unwrapBool,
-      "fab": fab |> Utils.unwrapBool,
       "onClick": onClick |> Js.Undefined.from_opt,
+      "component": Js.Undefined.from_opt component,
       "className": Js.Undefined.from_opt className
     }
     children;
