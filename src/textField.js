@@ -6,19 +6,22 @@ var MaterialUi         = require("material-ui");
 var Js_undefined       = require("bs-platform/lib/js/js_undefined.js");
 var Utils$BsMaterialUi = require("./utils.js");
 
-function make(disableUnderline, disabled, error, autoFocus, fullWidth, style, value, onChange, placeholder, className, inputType, children) {
-  return ReasonReact.wrapJsForReason(MaterialUi.Input, {
+function make(disableUnderline, disabled, error, autoFocus, fullWidth, select, style, value, label, onChange, placeholder, className, helperText, inputType, children) {
+  return ReasonReact.wrapJsForReason(MaterialUi.TextField, {
               disableUnderline: Utils$BsMaterialUi.unwrapBool(disableUnderline),
               disabled: Utils$BsMaterialUi.unwrapBool(disabled),
               error: Utils$BsMaterialUi.unwrapBool(error),
               fullWidth: Utils$BsMaterialUi.unwrapBool(fullWidth),
               autoFocus: Utils$BsMaterialUi.unwrapBool(autoFocus),
+              select: Utils$BsMaterialUi.unwrapBool(select),
               style: Js_undefined.from_opt(style),
               placeholder: Js_undefined.from_opt(placeholder),
               className: Js_undefined.from_opt(className),
+              helperText: Js_undefined.from_opt(helperText),
               type: Js_undefined.from_opt(inputType),
               value: Js_undefined.from_opt(value),
-              onChange: Js_undefined.from_opt(onChange)
+              onChange: Js_undefined.from_opt(onChange),
+              label: Js_undefined.from_opt(label)
             }, children);
 }
 

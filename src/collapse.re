@@ -1,13 +1,13 @@
-external collapse : ReasonReact.reactClass = "material-ui/transitions/Collapse" [@@bs.module];
+external collapse : ReasonReact.reactClass = "" [@@bs.module "material-ui/transitions/Collapse"];
 
-let make expanded::(expanded: bool) ::transitionDuration=? children =>
+let make
+    expanded::(expanded: option bool)=?
+    transitionDuration::(transitionDuration: option string)=?
+    children =>
   ReasonReact.wrapJsForReason
     reactClass::collapse
     props::
       Js.Undefined.(
-        {
-          "in": Js.Boolean.to_js_boolean expanded,
-          "transitionDuration": from_opt transitionDuration
-        }
+        {"in": Utils.unwrapBool expanded, "transitionDuration": from_opt transitionDuration}
       )
     children;

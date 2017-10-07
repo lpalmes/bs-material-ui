@@ -1,4 +1,4 @@
-external paper : ReasonReact.reactClass = "Paper" [@@bs.module "material-ui"];
+external listItem : ReasonReact.reactClass = "ListItem" [@@bs.module "material-ui"];
 
 /* button	boolean	false	If true, the ListItem will be a button.
    children	Node		The content of the component.
@@ -18,7 +18,7 @@ let make
     style::(style: option ReactDOMRe.style)=?
     children =>
   ReasonReact.wrapJsForReason
-    reactClass::paper
+    reactClass::listItem
     props::
       Js.Undefined.(
         {

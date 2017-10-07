@@ -6,14 +6,14 @@ var MaterialUi         = require("material-ui");
 var Js_undefined       = require("bs-platform/lib/js/js_undefined.js");
 var Utils$BsMaterialUi = require("./utils.js");
 
-function make(dense, disablePadding, className, component, style, subheader, children) {
-  return ReasonReact.wrapJsForReason(MaterialUi.List, {
-              dense: Utils$BsMaterialUi.unwrapBool(dense),
-              disablePadding: Utils$BsMaterialUi.unwrapBool(disablePadding),
+function make(className, style, primary, secondary, inset, disableTypography, children) {
+  return ReasonReact.wrapJsForReason(MaterialUi.ListItemText, {
+              inset: Utils$BsMaterialUi.unwrapBool(inset),
+              disableTypography: Utils$BsMaterialUi.unwrapBool(disableTypography),
               style: Js_undefined.from_opt(style),
-              component: Js_undefined.from_opt(component),
               className: Js_undefined.from_opt(className),
-              subheader: Js_undefined.from_opt(subheader)
+              primary: Js_undefined.from_opt(primary),
+              secondary: Js_undefined.from_opt(secondary)
             }, children);
 }
 

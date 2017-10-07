@@ -6,10 +6,11 @@ var MaterialUi         = require("material-ui");
 var Js_undefined       = require("bs-platform/lib/js/js_undefined.js");
 var Utils$BsMaterialUi = require("./utils.js");
 
-function make(raised, style, children) {
+function make(raised, style, className, children) {
   return ReasonReact.wrapJsForReason(MaterialUi.Card, {
               raised: Utils$BsMaterialUi.unwrapBool(raised),
-              style: Js_undefined.from_opt(style)
+              style: Js_undefined.from_opt(style),
+              className: Js_undefined.from_opt(className)
             }, children);
 }
 

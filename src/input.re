@@ -49,7 +49,7 @@ let make
     onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
     placeholder::(placeholder: option string)=?
     className::(className: option string)=?
-    _type::(_type: option string)=?
+    inputType::(inputType: option string)=?
     children =>
   ReasonReact.wrapJsForReason
     reactClass::input
@@ -62,9 +62,9 @@ let make
           "fullWidth": fullWidth |> Utils.unwrapBool,
           "autoFocus": autoFocus |> Utils.unwrapBool,
           "style": from_opt style,
-          "placeholder": from_opt className,
+          "placeholder": from_opt placeholder,
           "className": from_opt className,
-          "type": from_opt _type,
+          "type": from_opt inputType,
           "value": from_opt value,
           "onChange": from_opt onChange
         }

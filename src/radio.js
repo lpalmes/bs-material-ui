@@ -6,7 +6,7 @@ var MaterialUi   = require("material-ui");
 var Js_undefined = require("bs-platform/lib/js/js_undefined.js");
 
 function make(checked, checkedClassName, checkedIcon, disableRipple, disabled, disabledClassName, icon, indeterminate, indeterminateIcon, name, onChange, value, children) {
-  return ReasonReact.wrapJsForReason(MaterialUi.Checkbox, {
+  return ReasonReact.wrapJsForReason(MaterialUi.Radio, {
               checked: Js_undefined.from_opt(checked),
               checkedClassName: Js_undefined.from_opt(checkedClassName),
               checkedIcon: Js_undefined.from_opt(checkedIcon),

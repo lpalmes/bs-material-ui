@@ -1,24 +1,24 @@
-external paper : ReasonReact.reactClass = "Paper" [@@bs.module "material-ui"];
+external menuItem : ReasonReact.reactClass = "MenuItem" [@@bs.module "material-ui"];
 
 let make
-    ::dense=?
-    ::disablePadding=?
+    ::selected=?
+    onClick::(onClick: option (ReactEventRe.Mouse.t => unit))=?
     className::(className: option string)=?
     component::(component: option string)=?
     style::(style: option ReactDOMRe.style)=?
-    subheader::(subheader: option ReasonReact.reactElement)=?
+    value::(value: option 'a)=?
     children =>
   ReasonReact.wrapJsForReason
-    reactClass::paper
+    reactClass::menuItem
     props::
       Js.Undefined.(
         {
-          "dense": Utils.unwrapBool dense,
-          "disablePadding": Utils.unwrapBool disablePadding,
+          "selected": Utils.unwrapBool selected,
           "style": from_opt style,
           "component": from_opt component,
           "className": from_opt className,
-          "subheader": from_opt subheader
+          "value": from_opt value,
+          "onClick": from_opt onClick
         }
       )
     children;

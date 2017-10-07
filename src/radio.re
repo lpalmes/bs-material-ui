@@ -1,4 +1,4 @@
-external checkbox : ReasonReact.reactClass = "Checkbox" [@@bs.module "material-ui"];
+external radio : ReasonReact.reactClass = "Radio" [@@bs.module "material-ui"];
 
 let make
     /* technically a union bool|string but why are you passing a string to `checked`? */
@@ -19,7 +19,7 @@ let make
     value::(value: option string)=?
     children =>
   ReasonReact.wrapJsForReason
-    reactClass::checkbox
+    reactClass::radio
     props::
       Js.Undefined.(
         {

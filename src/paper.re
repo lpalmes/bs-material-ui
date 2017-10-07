@@ -3,8 +3,8 @@ external paper : ReasonReact.reactClass = "Paper" [@@bs.module "material-ui"];
 let make
     elevation::(elevation: option int)=?
     className::(className: option string)=?
-    ::square=?
     style::(style: option ReactDOMRe.style)=?
+    ::square=?
     children =>
   ReasonReact.wrapJsForReason
     reactClass::paper

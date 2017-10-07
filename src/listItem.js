@@ -7,7 +7,7 @@ var Js_undefined       = require("bs-platform/lib/js/js_undefined.js");
 var Utils$BsMaterialUi = require("./utils.js");
 
 function make(button, dense, disableGutters, divider, onClick, className, component, style, children) {
-  return ReasonReact.wrapJsForReason(MaterialUi.Paper, {
+  return ReasonReact.wrapJsForReason(MaterialUi.ListItem, {
               dense: Utils$BsMaterialUi.unwrapBool(dense),
               button: Utils$BsMaterialUi.unwrapBool(button),
               disableGutters: Utils$BsMaterialUi.unwrapBool(disableGutters),
