@@ -1,10 +1,14 @@
-external cardActions : ReasonReact.reactClass = "CardActions" [@@bs.module "material-ui"];
+[@bs.module "material-ui"] external cardActions : ReasonReact.reactClass = "CardActions";
 
-let make ::disableActionSpacing=? style::(style: option ReactDOMRe.style)=? children =>
-  ReasonReact.wrapJsForReason
-    reactClass::cardActions
-    props::
+let make = (~disableActionSpacing=?, ~style: option(ReactDOMRe.style)=?, children) =>
+  ReasonReact.wrapJsForReason(
+    ~reactClass=cardActions,
+    ~props=
       Js.Undefined.(
-        {"disableActionSpacing": disableActionSpacing |> Utils.unwrapBool, "style": from_opt style}
-      )
-    children;
+        {
+          "disableActionSpacing": disableActionSpacing |> Utils.unwrapBool,
+          "style": from_opt(style)
+        }
+      ),
+    children
+  );

@@ -1,6 +1,9 @@
-external dialogContentText : ReasonReact.reactClass =
-  "DialogContentText" [@@bs.module "material-ui"];
+[@bs.module "material-ui"] external dialogContentText : ReasonReact.reactClass =
+  "DialogContentText";
 
-let make style::(style: option ReactDOMRe.style)=? children =>
-  ReasonReact.wrapJsForReason
-    reactClass::dialogContentText props::Js.Undefined.({"style": from_opt style}) children;
+let make = (~style: option(ReactDOMRe.style)=?, children) =>
+  ReasonReact.wrapJsForReason(
+    ~reactClass=dialogContentText,
+    ~props=Js.Undefined.({"style": from_opt(style)}),
+    children
+  );

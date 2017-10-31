@@ -1,4 +1,4 @@
-external input : ReasonReact.reactClass = "Input" [@@bs.module "material-ui"];
+[@bs.module "material-ui"] external input : ReasonReact.reactClass = "Input";
 
 /* autoComplete	string		This property helps users to fill forms faster, especially on mobile devices. The name can be confusion, it's more like an autofill. You can learn about it with that article https://developers.google.com/web/updates/2015/06/checkout-faster-with-autofill
    autoFocus	boolean		If true, the input will be focused during the first mount.
@@ -38,22 +38,24 @@ external input : ReasonReact.reactClass = "Input" [@@bs.module "material-ui"];
    Maximum number of rows to display when multiline option is set to true.
    type	string	'text'	Type of the input element. It should be a valid HTML5 input type.
    value */
-let make
-    ::disableUnderline=?
-    ::disabled=?
-    ::error=?
-    ::autoFocus=?
-    ::fullWidth=?
-    style::(style: option ReactDOMRe.style)=?
-    value::(value: option string)=?
-    onChange::(onChange: option (ReactEventRe.Form.t => unit))=?
-    placeholder::(placeholder: option string)=?
-    className::(className: option string)=?
-    inputType::(inputType: option string)=?
-    children =>
-  ReasonReact.wrapJsForReason
-    reactClass::input
-    props::
+let make =
+    (
+      ~disableUnderline=?,
+      ~disabled=?,
+      ~error=?,
+      ~autoFocus=?,
+      ~fullWidth=?,
+      ~style: option(ReactDOMRe.style)=?,
+      ~value: option(string)=?,
+      ~onChange: option((ReactEventRe.Form.t => unit))=?,
+      ~placeholder: option(string)=?,
+      ~className: option(string)=?,
+      ~inputType: option(string)=?,
+      children
+    ) =>
+  ReasonReact.wrapJsForReason(
+    ~reactClass=input,
+    ~props=
       Js.Undefined.(
         {
           "disableUnderline": disableUnderline |> Utils.unwrapBool,
@@ -61,12 +63,13 @@ let make
           "error": error |> Utils.unwrapBool,
           "fullWidth": fullWidth |> Utils.unwrapBool,
           "autoFocus": autoFocus |> Utils.unwrapBool,
-          "style": from_opt style,
-          "placeholder": from_opt placeholder,
-          "className": from_opt className,
-          "type": from_opt inputType,
-          "value": from_opt value,
-          "onChange": from_opt onChange
+          "style": from_opt(style),
+          "placeholder": from_opt(placeholder),
+          "className": from_opt(className),
+          "type": from_opt(inputType),
+          "value": from_opt(value),
+          "onChange": from_opt(onChange)
         }
-      )
-    children;
+      ),
+    children
+  );
