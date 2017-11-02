@@ -1,5 +1,5 @@
 {
-  "name": "bs-material-ui",
+  "name": "lpalmes/bs-material-ui",
   "private": false,
   "version": "0.1.0",
   "description": "Reason-React bindings for Material Ui",
@@ -9,10 +9,7 @@
   "bugs": {
     "url": "https://github.com/lpalmes/bs-material-ui/issues"
   },
-  "files": [
-    "src/*.re",
-    "bsconfig.json"
-  ],
+  "files": ["src/*.re", "bsconfig.json"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lpalmes/bs-material-ui.git"
@@ -35,6 +32,7 @@
   "peerDependencies": {
     "material-ui": "1.0.0-beta.x",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "reason-react": ">=0.2.1"
   }
 }
